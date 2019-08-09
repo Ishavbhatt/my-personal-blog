@@ -1,12 +1,6 @@
-- name: Dennis Brotzky
+- name: Ishav bhatt
   bio: |
-    Written by You. This is where your author bio lives. Share your work, your
+    Written by Ishav bhatt. This is where your author bio lives. Share your work, your
     joys and of course, your Twitter handle.
-  avatar: ./avatars/dennis-brotzky.jpg
+  avatar: ishav.jpg
   featured: true
-
-- name: Thiago Costa
-  bio: |
-    Written by You. This is where your author bio lives. Share your work, your
-    joys and of course, your Twitter handle.
-  avatar: ./avatars/thiago-costa.png
