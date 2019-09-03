@@ -33,7 +33,7 @@ module.exports = {
   },
   plugins: [
     {
-      // resolve: "@narative/gatsby-theme-novela",
+      resolve: "@narative/gatsby-theme-novela",
       options: {
         contentPosts: "content/posts",
         contentAuthors: "content/authors",
@@ -41,7 +41,7 @@ module.exports = {
       },
     },
     {
-      // resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Ishav Bhatt`,
         short_name: `Ishav`,
