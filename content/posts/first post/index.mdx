@@ -1,76 +1,111 @@
 ---
-title: JS DOM
+title: Functions..
 author: Ishav Bhatt
 date: 2019-08-27
-hero: ./images/images.jpeg
-excerpt: This is the first post on my new blog. I’m just getting this new blog going, so stay tuned for more.
+hero: ./images/code.jpg
+excerpt: This is the secound post on my new blog. I’m just getting this new blog going, so stay tuned for more.
 ---
 
 
-##  An Introduction of Javascript DOM
+## All about JavaScript functions...
 
-Today I write our first article on Javascript DOM. First of all we know that what is js DOM. The Javascript DOM (Document Object Model) is an interface that allows the developers to manipulate the content, structure and style of a website or webpage.  
+### What is fuction ?
 
-## What is the DOM ?
+Basically, We used JavaScript function to perform operations. We can call JavaScript function many times to reuse the code. Generally, Functions is a "subprograme" or a reuseable piece of code that is designed to perform a particular task. 
+It is a series of statements called function body. We can passed the values to a function and the function return a value. 
 
-At that time, most of the website consist of an HTML and CSS documents. The browser creates the documents known as Documents Object Model (DOM). This documents enables Javascript to access the elements and styles of a website or webpager. The DOM is buuilt in a tree structure os objects and defines:
+## Advantage of JavaScript function..
+
+There are mainly two advantages of JavaScript functions.
+
+1. Code reusability: We can call a function several times so it is save our coding.
+
+2. Less coding: It makes our program easy. We don’t need to write many lines of code each time to perform a common task.
 
 
-1. HTML elements as objects
+## JavaScript Function Syntax
 
-2. Properties and events of the HTML elements
-
-3. Methods to access the HTML Elements
-
-
-
-## DOM Documents...
-
-The  DOM documents is the owner of all objects in your website or webpage. That means if you want to access any object on your webpage you always have to start with the document. And, It also contains many important properties and methods that enable us to access and modify our website.
-
-## Finding HTML Elements
-
-Now that we understand what the DOM document is we can start getting our first HTML elements. There are many different ways to do so using the Javascript DOM here are the most common:
-
-### Get Element by id
+The syntax of declaring function is given below.
 
 ```javascript
-var dom = document.getElementById('id-name');
+function functionName([arg1, arg2, ...argN]){  
+ //your code here  
+} 
+```	
+
+## Function that does not take a parameter and doesn’t return anything.
+
+```javascript
+function sayHello () {
+  console.log("Hello !");
+} 
+```	
+The above function does not take a parameter and doesn’t return a value;
+
+
+### A function that take a parameter but does not return anything.
+```javascript
+function log (message) {
+  console.log (message);
+}
+```
+The above function takes one parameter, named message, and logs the value to the console, and it return nothing.
+
+#### If the function doesn’t return any value explicitly, then by default it returns “undefined”
+
+### A function that takes a parameter and returns a value.
+
+```javascript
+function square(number) {
+ return number * number;
+}
 
 ```
-### Get elements by class name
+console.log(square(2));
+The output of the above function is 4.
 
+## Most used functiion..
+
+. Function Declaration
+
+#### A function declaration is made of function keyword, followed by an function name, a list of parameters in a pair of parenthesis (para1, ..., paramN) and a pair of curly braces {...} that defines the body code.
 
 ```javascript
-var dom = document.getElementsByClassName('class-name');
+// function declaration
+function isEven(num) {
+  return num % 2 === 0;
+}
+isEven(24); // return true;
+isEven(11); // return false;
 
 ```
-### Get element by tag name
+function isEven(num) {...} is a function declaration that defines isEven function, which determines if a number is even or not.
+
+. Function expression
+
+#### A function expression is determined by a function keyword, followed by an optional function name, a list of parameters in a pair of parenthesis (para1, ..., paramN) and a pair of curly braces { ... } that defines the body code.
 
 ```javascript
-var dom = document.getElementsByTagName('li');
+var getRectArea = function(width, height) {
+    return width * height;
+}
+
+console.log(getRectArea(3,4));
+// output: 12
 
 ```
-## Queryselectors
+. Arrow function
 
-The querySelector() method returns the first element that matches a specific CSS selector. That means that you can get elements by id, class, tag and all other CSS selectors. Here I just list a few of the most popular options.
-
-### Get by id:
+#### An arrow function is defined using a pair of parenthesis that contains the list of parameters (param1, param2, ..., paramN), followed by a fat arrow => and a pair of curly braces {...} that defines the body statements.
 
 ```javascript
-var header = document.querySelector(‘#header’)
-
-```
-
-### Get by class:
-
-```javascript
-var items = document.querySelector(‘.list-items’)
-
-```
-### get by tag:
-
-```javascript
-var headings = document.querySelector(‘h1’);
+const absValue = (number) => {
+  if (number < 0) {
+    return -number;
+  }
+  return number;
+}
+absValue(-10); // => 10
+absValue(5); // => 5
 
 ```
