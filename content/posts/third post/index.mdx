@@ -1,0 +1,109 @@
+---
+title: Functions..
+author: Ishav Bhatt
+date: 2019-09-08
+hero: ./images/git.png
+excerpt: This is the secound post on my new blog. I’m just getting this new blog going, so stay tuned for more.
+---
+
+
+#### An Intro to Git and GitHub for Beginners...
+
+### What is Git ?
+
+Basically, Git is version-control software. It was created by Linus Torvalds, the guy who invented Linux. It is the free and open source distributed version control system that is responsible for everything Github related thathappens locally on ypur computer 
+
+### Required Vocabulary...
+
+When you’re first starting to use git, it can be intimidating. Commands and concepts may seem totally foreign if you are never used any form of version control in the past. You will pick them up super fast, though.
+
+
+## Repository:
+
+Repositories is offered to as repo. A repository is the collection of files and folders that you’re using git to track. A repository is like a folder for your project. Your project's repository contains all of your project's files and stores each file's revision history. You can also discuss and manage your project's work within the repository. Public repositories are visible to everyone.
+
+## Commit:
+
+Think of this as saving your work. When you commit to a repository, it’s like you’re gathering up the files as they exist at that moment and putting them in a time capsule. The commit will only exist on your local machine until it is pushed to a remote repository.
+
+
+## Push:
+
+Pushing refers to sending your committed changes to a remote repository, such as a repository hosted on GitHub. Push the specified branch to <remote>, along with all of the necessary commits and internal objects. This creates a local branch in the destination repository. T
+
+
+## Branch:
+
+You can think of your git repo as a tree. The trunk of the tree, the software that goes live, is called the Master Branch. That’s the one that goes live. The branches of that tree are, well, called branches. Especially when more than one person is working in the project and making changes — is by using branches. A branch is essentially is a unique set of code changes with a unique name. Each repository can have one or more branches.
+
+## Clone:
+
+Cloning a repo is pretty much exactly what it sounds like. It takes the entire online repository and makes an exact copy of it on your local machine. You will need to do this for any number of reasons, not the least of which are starting in the middle of a project with a new team, swapping workstations, or starting over from a corrupted repo.
+
+## Pull Request:
+
+A pull request is when you submit a request for the changes you have made (either on a branch or a fork) to be pulled (or merged) into the Master Branch of the repository. This is the big time. This is where the magic happens. If the pull request is approved, you will have officially contributed to the software, and Github will forever show exactly what you did. However, if the pull request is denied for any reason, the denier will be able to give feedback on why the request was turned down and what you can do to get it accepted.
+
+#### How to Install Git...
+
+Git probably didn’t come installed on your computer, so we have to get it there. Installing git is super easy, whether you’re on Linux, Mac, or Windows.
+
+For Linux, if you’re in Ubuntu open the terminal and type `sudo apt-get install git-all` .
+
+On Mac, you just need to open up the terminal and type git.
+
+
+#### INSTALLATION & GUIS 
+
+##GitHub for Windows
+https://windows.github.com
+
+##GitHub for Mac
+https://mac.github.com
+
+##GitHub for All Platforms
+https://git-scm.com
+
+
+##SETUP
+Configuring user information used across all local repositories
+
+set a name that is idemtifible for credit when review version history
+```javascript
+
+git config --global user.name "[firstname lastname]"
+
+```
+
+set an email address that will we associated with each history marker
+```javascript
+
+git config --global user.email "[valid-email]"
+
+```
+
+set automatic command line coloring for Git for easy reviewing
+```javascript
+
+git config --global color.ui auto
+
+```
+
+##SETUP & INIT
+Configuring user information, initializing and cloning repositories
+
+initialize an existing directory as aGit repository
+```javascript
+
+git init
+
+```
+
+retrieve an entire repository from a hosted location via URL
+```javascript
+
+git clone [url]
+
+```
+
+
