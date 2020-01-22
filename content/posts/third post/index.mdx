@@ -1,93 +1,131 @@
 ---
-title: Git & GitHub
+title: React
 author: Ishav Bhatt
-date: 2019-09-08
-hero: ./images/git.png
-excerpt: This is the secound post on my new blog. I’m just getting this new blog going, so stay tuned for more.
+date: 2019-08-27	
+hero: ./images/images.jpeg
+excerpt:  React, how to build something in React.
 ---
 
 
-#### An Intro to Git and GitHub for Beginners...
+##  React
 
-### What is Git ?
+React is a javascript library for building user iterfaces. React makes us to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make our code more predictable and easier to debug. It is Component based. React build components that manage their own state  then compose them to make complex UIs. React can be used as a base in the development of single-page or mobile applications. However React is only concerned with rendering data to the DOM
 
-Basically, Git is version-control software. It was created by Linus Torvalds, the guy who invented Linux. It is the free and open source distributed version control system that is responsible for everything Github related thathappens locally on ypur computer 
+## Components
 
-### Required Vocabulary...
+React code is made of entities called components. Components can be rendered to a particular element in the DOM using the React DOM library. When rendering a component, one can pass in values that are known as "props". Components are the building blocks of any React app.  Simply put, a component is a JavaScript class or function that optionally accepts inputs i.e. properties(props) and returns a React element that describes how a section of the UI should appear. components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
 
-When you’re first starting to use git, it can be intimidating. Commands and concepts may seem totally foreign if you are never used any form of version control in the past. You will pick them up super fast, though.
+## A different way to write components
 
+The two primary ways of declaring components in React is via functional components and class-based components.
 
-## Repository:
+1. Functionl components
 
-Repositories is offered to as repo. A repository is the collection of files and folders that you’re using git to track. A repository is like a folder for your project. Your project's repository contains all of your project's files and stores each file's revision history. You can also discuss and manage your project's work within the repository. Public repositories are visible to everyone.
+2. Class-based components
 
-## Commit:
+### Functional components
 
-Think of this as saving your work. When you commit to a repository, it’s like you’re gathering up the files as they exist at that moment and putting them in a time capsule. The commit will only exist on your local machine until it is pushed to a remote repository.
+Functional components are purely  and are simply represented by a function that optionally takes props and returns a React element to be rendered to the page. Generally, it is preferred to use functional components whenever possible because of their predictability and conciseness. Their output is always the same given the same props. Functional components are declared with a function that then returns some JSX. for example:
 
+```javascript
+const FuntionalComponent = (props) => <div>Hello, {props.name}!</div>;
 
-## Push:
+```
 
-Pushing refers to sending your committed changes to a remote repository, such as a repository hosted on GitHub. Push the specified branch to <remote>, along with all of the necessary commits and internal objects. This creates a local branch in the destination repository. T
+### Class Components
 
+These components are created using ES6’s class syntax. They have some additional features such as the ability to contain logic (for example methods that handle onClick events), local state (more) and other capabilities to be explored in later sections of the book. As you explore other resources, you might find class components referred to as smart, container or stateful components. They are also known as "stateful" components, because their state can hold values throughout the component and can be passed to child components through props:
 
-## Branch:
+A class component in its simplest form:
 
-You can think of your git repo as a tree. The trunk of the tree, the software that goes live, is called the Master Branch. That’s the one that goes live. The branches of that tree are, well, called branches. Especially when more than one person is working in the project and making changes — is by using branches. A branch is essentially is a unique set of code changes with a unique name. Each repository can have one or more branches.
+```javascript
+class ClassComponent extends React.Component {
+  render(){
+    return <h1>Hi, I’m a smart component!</h1>;
+  }
+}
 
-## Clone:
+```
+### How do I choose which component type to use?
 
-Cloning a repo is pretty much exactly what it sounds like. It takes the entire online repository and makes an exact copy of it on your local machine. You will need to do this for any number of reasons, not the least of which are starting in the middle of a project with a new team, swapping workstations, or starting over from a corrupted repo.
+#### Use a class component if you:
 
-## Pull Request:
+1. need to manage local state
 
-A pull request is when you submit a request for the changes you have made (either on a branch or a fork) to be pulled (or merged) into the Master Branch of the repository. This is the big time. This is where the magic happens. If the pull request is approved, you will have officially contributed to the software, and Github will forever show exactly what you did. However, if the pull request is denied for any reason, the denier will be able to give feedback on why the request was turned down and what you can do to get it accepted.
+2. need to add lifecycle methods to your component
 
-#### How to Install Git...
+3. need to add logic for event handlers
 
-Git probably didn’t come installed on your computer, so we have to get it there. Installing git is super easy, whether you’re on Linux, Mac, or Windows.
+Otherwise, always use a functional component.
 
-For Linux, if you’re in Ubuntu open the terminal and type `sudo apt-get install git-all` .
+## props
 
-On Mac, you just need to open up the terminal and type git.
+Props are React’s way of making components easily and dynamically customisable. They provide a way of passing properties/data down from one component to another, typically from a parent to a child component (unidirectional dataflow). It’s important to note that props are read-only and that a component must never modify the props passed to it. As such, when a component is passed props as input, it should always return the same result for the same input.
 
+##### All React components should act as pure functions with respect to their props.
 
-#### INSTALLATION & GUIS 
+```javascript
+const FunctionalComponent = props => <h1>Hello {props.name}</h1>;
+   ReactDOM.render(
+     <ClassComponent name={‘John’}/>,
+     document.getElementById('root')
+   );
 
-##GitHub for Windows
-https://windows.github.com
+```
+This renders the text “Hello Edmond” to the screen.
 
-##GitHub for Mac
-https://mac.github.com
+### Using Props with Class Components
 
-##GitHub for All Platforms
-https://git-scm.com
+Adding props to class components is a very similar process to the one used in the functional component above. There are two notable changes:
 
+1. Props is not passed as an argument to the class
 
-##SETUP
-Configuring user information used across all local repositories
-
-set a name that is idemtifible for credit when review version history
-git config --global user.name "[firstname lastname]"
-
-
-set an email address that will we associated with each history marker
-git config --global user.email "[valid-email]"
-
-
-set automatic command line coloring for Git for easy reviewing
-git config --global color.ui auto
-
-
-##SETUP & INIT
-Configuring user information, initializing and cloning repositories
-
-initialize an existing directory as aGit repository
-git init
+2. The name attribute is accessed using this.props.name instead of props.name
 
 
-retrieve an entire repository from a hosted location via URL
-git clone [url]
+```javascript
+class ClassComponent extends React.Component {
+     render(){
+     return <h1>Hello {this.props.name}</h1>;
+     }
+   }
+ReactDOM.render(
+     <ClassComponent name={‘John’}/>,
+     document.getElementById('root')
+   );
+
+```
+
+## Conditional statements
+
+If else statements cannot be used inside JSX but conditional expressions can be used instead. The example below will render { i === 1 ? 'true' : 'false' } as the string 'true' because i is equal to 1.
+
+#### Functions and JSX can be used in conditionals:
+
+```javascript
+class App extends React.Component {
+  render() {
+    const sections = [1, 2, 3];
+    return (
+      <div>
+        {sections.length > 0 && sections.map(n => (
+            /* 'key' is used by react to keep track of list items and their changes */
+            /* Each 'key' must be unique */
+            <div key={"section-" + n}>Section {n}</div>
+        ))}
+      </div>
+    );
+  }
+}
+
+```
+##### The above will render:
+```javascript
+<div>
+  <div>Section 1</div>
+  <div>Section 2</div>
+  <div>Section 3</div>
+</div>
 
 
+```
