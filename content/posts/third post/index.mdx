@@ -1,8 +1,8 @@
 ---
 title: React
 author: Ishav Bhatt
-date: 2019-08-27	
-hero: ./images/images.jpeg
+date: 2020-01-23	
+hero: ./images/react.jpg
 excerpt:  React, how to build something in React.
 ---
 
@@ -27,7 +27,7 @@ The two primary ways of declaring components in React is via functional componen
 
 Functional components are purely  and are simply represented by a function that optionally takes props and returns a React element to be rendered to the page. Generally, it is preferred to use functional components whenever possible because of their predictability and conciseness. Their output is always the same given the same props. Functional components are declared with a function that then returns some JSX. for example:
 
-```javascript
+```js
 const FuntionalComponent = (props) => <div>Hello, {props.name}!</div>;
 
 ```
@@ -38,7 +38,7 @@ These components are created using ES6’s class syntax. They have some addition
 
 A class component in its simplest form:
 
-```javascript
+```js
 class ClassComponent extends React.Component {
   render(){
     return <h1>Hi, I’m a smart component!</h1>;
@@ -64,7 +64,7 @@ Props are React’s way of making components easily and dynamically customisable
 
 ##### All React components should act as pure functions with respect to their props.
 
-```javascript
+```javascripjs
 const FunctionalComponent = props => <h1>Hello {props.name}</h1>;
    ReactDOM.render(
      <ClassComponent name={‘John’}/>,
@@ -83,7 +83,7 @@ Adding props to class components is a very similar process to the one used in th
 2. The name attribute is accessed using this.props.name instead of props.name
 
 
-```javascript
+```js
 class ClassComponent extends React.Component {
      render(){
      return <h1>Hello {this.props.name}</h1>;
@@ -120,12 +120,11 @@ class App extends React.Component {
 
 ```
 ##### The above will render:
-```javascript
+```js
 <div>
   <div>Section 1</div>
   <div>Section 2</div>
   <div>Section 3</div>
 </div>
-
 
 ```
