@@ -1,50 +1,47 @@
 ---
-title: Redux
+title: HTTP Request-Response
 author: Ishav Bhatt
 date: 2020-01-24	
-hero: ./images/redux.png
-excerpt:  Redux flow
+hero: ./images/http.png
+excerpt: Learn HTTP Request-Response Data Flow
 ---
 
+## What is an HTTP request?
 
-##  Redux
+The Hypertext Transfer Protocol (HTTP) is designed to enable communications between clients and servers. HTTP works as a request-response protocol between a client and server. A web browser may be the client, and an application on a computer that hosts a web site may be the server. As most of us already know, the Hypertext Transfer Protocol (HTTP) is designed to enable communications between clients and servers. HTTP works as a request-response protocol between a client and server: The browser submits a HTTP request to the server; that request is processed by the server, which returns a HTTP response to the client. The response contains status information about the request.
 
-Redux is an open-source JavaScript library for managing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. It is a library which holds the entire state of the app in the simplest manner possible while also using the least amount of boilerplate code. Redux helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. The Redux DevTools make it easy to trace when, where, why, and how your application's state changed. Redux works with any UI layer, and has a large ecosystem of addons to fit your needs.
+### What are the different types of request methods that can be included in an HTTP request?
 
-Redux allows you to manage the state of the application via a unidirectional flow where a child component child component can directly access the state from the redux store instead of getting state changes from parent components.
+##### Four of the most common request methods are
 
-### Important things that I should keep in mind while working in react or redux
+1. GET
 
-1. Reducers must be pure functions. Given any input, output must always be the same.
+2. POST 
 
-2. The state of whole application is stored in an object tree within a single store. 
-
-3. State is read-only. The only way to change the state is to emit an action, an object describing what happened.
+3. PUT
  
-4. Changes in state are made with pure functions ( reducers).
+4. DELETE
 
-### Actions:
+### GET:
 
-Actions are payloads of information that send data from your application to your store. Action is an plain object that is returned by a pure function with no side-effects. The action object contains the “type” and any necessary information to update the state. The object is sent to the store using dispatch(), and the store updates the state using the information contained in the action object. Actions describe that something happened.
+GET requests generally ask for the resource to be returned unchanged. Sending a request to for the homepage of Twitter would be a GET request.
 
-### Reducer:
+### POST:
 
-Reducer is a pure function that takes the current state and action, and performs an update on the state. It returns the new state. Typically use a switch statement that reads the action.type and then creates the new state with this action which is still just a plain JavaScript. Reducers specify how the application's state changes in response to actions sent to the store.
+POST requests are used to make a submission to the resource. This type of request would typically ask the server to store new information, for example by writing it to a database. Posting a new tweet would be an example of a POST request.
 
-### Store:
+### PUT:
 
-Redux doesn't have a Dispatcher or support many stores. Instead, there is just a single store with a single root reducing function There is only one and it holds the entire state in a single object. It is created by a variable using createStore(combinedReducer). The store passes two arguments to the reducer — the previous state and the action.
+PUT requests are used to update a resource. Editing a tweet would be an example of a PUT request.
 
-#### Flow:
+### DELETE:
 
-1. A user interacts with a frontend component. A prop is used to call a function which initiates an action. Actions are initiated using props as they are mapped to props in an object called mapActionsToProps ( or it can be called anything), which tells the react app which props to be used to initiate an action.
+DELETE requests are used to remove a resource. For example, deleting a tweet would be an example of a DELETE request.
 
-2. An action usually contains a type (or identifier) and payload (or data). It can also perform tasks such as fetching data from APIs.
+## What is an HTTP response?
 
-3. Once an action is dispatched, it is received by a reducer. A reducer’s job is to return the changed state. Depending on the type of the action, a reducer may return an altered state of the component.
+An HTTP response is what is sent by a server to a client in response to an HTTP request. These responses contain a status code and if the request was successful, the requested resource. An example status code for a successful request would be “200” and an example status code for an unsuccessful request would be “404”. Other common status codes include “300” for redirects and “500” for server errors.
 
-4. The changed state is again utilized to show the updated component. The states are mapped to the props of the component, in the mapStateToProps function. The defined props in this function can be used accordingly to update the components.
+### What happens once the client receives the HTTP response back from the server?
 
-5. The Redux store saves the complete state tree returned by the root reducer
-
-6. The components are “subscribed” through the connect function and updated accordingly
+Once the client receives the HTTP response, the browser will render the HTTP response body message. This message is either the requested resource (for example, a web page) or display a message relating to status code if the request wasn’t successful.
